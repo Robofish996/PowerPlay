@@ -1,0 +1,164 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Add relative positioning to the navbar container */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Hamburger menu styles */
+.hamburger-menu {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.bar {
+    background-color: #fff;
+    height: 3px;
+    width: 30px;
+    margin: 4px 0;
+}
+
+/* Navbar button styles */
+.navbar-buttons {
+    position: absolute; 
+    right: 20px; 
+    top: 50%; 
+    transform: translateY(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+.login-button,
+.signup-button {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover,
+.signup-button:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    top: 55px;
+    left: -250px; 
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    transition: left 0.3s ease;
+    z-index: 1;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-logo {
+    padding: 20px;
+}
+
+.sidebar-logo a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    padding: 10px 0;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    display: block;
+}
+
+/* Media query for mobile */
+@media (max-width: 768px) {
+    .navbar-logo {
+        display: none;
+    }
+}
+/* User dropdown styles */
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-circle {
+    width: 40px;
+    height: 40px;
+    background-color: #eee; 
+    border-radius: 50%; 
+    overflow: hidden;
+    cursor: pointer; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-circle i {
+    font-size: 20px; 
+    color: #333; 
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+    top: 100%; 
+    right: 0; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.user-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #444;
+}
+
