@@ -15,19 +15,11 @@ if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
 }
 
-// Fetch featured products from the database
-$featuredProductsQuery = "SELECT * FROM featured_products";
-$result = $mysqli->query($featuredProductsQuery);
-
-// Initialize an array to store the featured products
-$featuredProductsData = array();
-
-// Check if there are results
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        // Add each product to the array
-        $featuredProductsData[] = $row;
-    }
+// Check if the user is logged in (you can customize this condition)
+if (!isset($_SESSION['username'])) {
+    // Redirect to the login page if not logged in
+    header('Location: login.php');
+    exit();
 }
 
 // Close the database connection
@@ -82,45 +74,45 @@ $mysqli->close();
         </div>
     </nav>
 
-<!-- Banner/Hero Section -->
-<div class="banner">
-    <img src="../css/images/pexels-artem-podrez-7773543.jpg" alt="Banner Image">
-    <div class="banner-text">
-        We technology meets people
-    </div>
-</div>
-
-<!-- Featured Products Flip Cards Section -->
-<!-- Featured Products Flip Cards Section -->
-<section class="featured-products">
-    <h2>Featured Products</h2>
-    <div class="container">
-        
-        <div class="product-cards">
-            <?php
-            // Loop through the featured products data and create flip cards
-            foreach ($featuredProductsData as $product) {
-                echo '<div class="product-card-container">';
-                echo '<div class="product-card">';
-                echo '<div class="card-front">';
-                echo '<img src="' . $product['product_image'] . '" alt="' . $product['product_name'] . '">';
-                echo '</div>';
-                echo '<div class="card-back">';
-                echo '<h3>' . $product['product_name'] . '</h3>';
-                echo '<p>' . $product['product_description'] . '</p>';
-                echo '<p>Price: $' . number_format($product['product_price'], 2) . '</p>';
-                echo '<p>Rating: ' . $product['product_rating'] . '</p>';
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
-            }
-            ?>
+    <!-- Banner/Hero Section -->
+    <div class="banner">
+        <img src="../css/images/pexels-artem-podrez-7773543.jpg" alt="Banner Image">
+        <div class="banner-text">
+            Where technology meets people
         </div>
     </div>
-</section>
 
-
-
+    <!-- Category Tiles Section -->
+    <h1 class="tileHeading">Browse through our various collection</h1>
+    <section class="category-tiles">
+        <div class="container">
+            <div class="category-tile">
+                <a href="../pages/mice.php">
+                    <img src="../css/images/tileImages/corsair-harpoon-rgb-wireless-gaming-mouse-600px-v3-removebg-preview.png" alt="Mice">
+                    <h3>Mice</h3>
+                </a>
+            </div>
+            <div class="category-tile">
+                <a href="../pages/keyboards.php">
+                    <img src="../css/images/tileImages/razor_BlackWidow_V4_75.png" alt="Keyboards">
+                    <h3>Keyboards</h3>
+                </a>
+            </div>
+            <div class="category-tile">
+                <a href="../pages/monitors.php">
+                    <img src="../css/images/tileImages/samsungmonitor-removebg-preview.png" alt="Monitors">
+                    <h3>Monitors</h3>
+                </a>
+            </div>
+            <div class="category-tile">
+                <a href="../pages/laptops.php">
+                    <img src="../css/images/tileImages/hp-victus-core-i5-rtx-3050-gaming-laptop-6f7f8ea-1000px-v10001-removebg-preview.png" alt="Laptops">
+                    <h3>Laptops</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
 
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
@@ -128,11 +120,13 @@ $mysqli->close();
             <a href="#">Power Play</a>
         </div>
         <ul class="sidebar-menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Categories</a></li>
-            <li><a href="#">Cart</a></li>
-            <li><a href="#">Login</a></li>
+            <li><a href="./store.php">Home</a></li>
+            <li><a href="./mice.php">Mice</a></li>
+            <li><a href="./keyboards.php">Keyboards</a></li>
+            <li><a href="./laptops.php">Laptops</a></li>
+            <li><a href="../pages/cart.php">Cart</a></li>
+            <li><a href="./settings.php">Settings</a></li>
+            <li><a href="./logout.php">Logout.php</a></li>
         </ul>
     </aside>
 
