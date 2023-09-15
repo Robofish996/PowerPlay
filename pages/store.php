@@ -124,6 +124,7 @@ $mysqli->close();
             <li><a href="./mice.php">Mice</a></li>
             <li><a href="./keyboards.php">Keyboards</a></li>
             <li><a href="./laptops.php">Laptops</a></li>
+            <li><a href="./monitors.php">Monitors</a></li>
             <li><a href="../pages/cart.php">Cart</a></li>
             <li><a href="./settings.php">Settings</a></li>
             <li><a href="./logout.php">Logout.php</a></li>

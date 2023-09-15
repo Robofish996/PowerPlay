@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart']) && isse
             <div class="products-container">
                 <?php
                 // Fetch all products from the products table
-                $query_products = "SELECT * FROM products WHERE product_category = 'Mice'";
+                $query_products = "SELECT * FROM products WHERE product_category = 'Keyboards'";
                 $result_products = mysqli_query($connection, $query_products);
 
                 // Display product in cards
