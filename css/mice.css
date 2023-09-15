@@ -1,0 +1,416 @@
+/*default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+/* Video background */
+#video-bg {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+}
+/* Main Content*/
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+
+
+
+/* Navbar*/
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; 
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Hamburger menu*/
+.hamburger-menu {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.bar {
+    background-color: #fff;
+    height: 3px;
+    width: 30px;
+    margin: 4px 0;
+}
+
+/* Navbar button */
+.navbar-buttons {
+    position: absolute; 
+    right: 20px; 
+    top: 50%; 
+    transform: translateY(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+.login-button,
+.signup-button {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover,
+.signup-button:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Sidebar*/
+.sidebar {
+    position: fixed;
+    top: 55px;
+    left: -250px; 
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    transition: left 0.3s ease;
+    z-index: 1;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-logo {
+    padding: 20px;
+}
+
+.sidebar-logo a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    padding: 10px 0;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    display: block;
+}
+
+/* Media query for mobile */
+@media (max-width: 768px) {
+    .navbar-logo {
+        display: none;
+    }
+}
+/* User dropdown*/
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-circle {
+    width: 40px;
+    height: 40px;
+    background-color: #eee; 
+    border-radius: 50%; 
+    overflow: hidden;
+    cursor: pointer; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-circle i {
+    font-size: 20px; 
+    color: #333; 
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    top: 100%; 
+    right: 0; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.user-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #444;
+}
+.container {
+    text-align: center;
+ 
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #0a0a0a;
+    text-align: center;
+    text-decoration: wavy;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 30px; 
+    justify-content: center; 
+    margin-bottom: 15px;
+}
+
+
+/* Card Section */
+.product-card {
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8) ;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    transition: transform 0.3s ease; 
+}
+.cardPrice{
+    font-weight: bold;
+}
+
+.product-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; 
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.product-card h2 {
+    font-size: 20px;
+    text-decoration: underline;
+    margin-bottom: 5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-card p {
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 10px;
+}
+
+.product-card button {
+    margin-top: auto;
+    background-color: #333;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-card button:hover {
+    background-color: #565657;
+    transform: scale(1.05); 
+}
+/*hover animation for the cards */
+.product-card {
+    transition: transform 0.3s ease; 
+}
+
+.product-card:hover {
+    transform: scale(1.05); 
+}
+/* The Modal*/
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    right: 0; 
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%; /* Adjust the width as needed */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    right: 0; 
+}
+  
+  /*Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+  /*Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    padding: 2px 16px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .modal-body {padding: 2px 16px;}
+  
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: #333;
+    color: white;
+  }
+  /*Open The Modal */
+#myBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
+    background-color: #333;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#myBtn:hover {
+    background-color: #565657;
+    transform: scale(1.05);
+}
+/* Circular cart button */
+.cart-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
+    background-color: #333;
+    color: #fff;
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Cart icon*/
+.cart-button i {
+    font-size: 24px; 
+}
+/*cart items in the modal */
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cart-item img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.cart-item p {
+    flex: 1;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+.modalbutton{
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+.modalbutton:hover {
+    background-color: #565657;
+}
+#grand-total {
+    position: absolute;
+    bottom: 10px;
+    right: 10px; 
+    font-size: 18px;
+}
+.warningText{
+    text-align: center;
+}
