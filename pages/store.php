@@ -50,28 +50,22 @@ $mysqli->close();
             <!-- Navbar buttons -->
             <div class="navbar-buttons">
                 <?php
-                // Check if the user is logged in (you can customize this condition)
+                // Check if the user is logged in
                 if (isset($_SESSION['username'])) {
                     // If logged in, display the user dropdown menu
                     echo '
-        <div class="user-dropdown">
-            <div class="profile-circle">
-            <i class="fas fa-user"></i>
-            </div>
-            <div class="dropdown-content">
-                <a href="./settings.php">Settings</a>
-                <a href="./logout.php">Logout</a>
-            </div>
-        </div>';
+            <div class="user-dropdown">
+                <div class="dropdown-content">
+                    <button class="dropdown-button" onclick="location.href=\'./settings.php\';">Settings</button>
+                    <button class="dropdown-button" onclick="location.href=\'./logout.php\';">Logout</button>
+                </div>
+            </div>';
                 } else {
                     // If not logged in, display the login and signup buttons
                     echo '<a href="login.php" class="login-button">Login</a>';
                     echo '<a href="signup.php" class="signup-button">Sign Up</a>';
                 }
                 ?>
-            </div>
-
-        </div>
     </nav>
 
     <!-- Banner/Hero Section -->

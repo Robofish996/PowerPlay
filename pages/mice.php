@@ -69,22 +69,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart']) && isse
                 if (isset($_SESSION['username'])) {
                     // If logged in, display the user dropdown menu
                     echo '
-        <div class="user-dropdown">
-            <div class="profile-circle">
-            <i class="fas fa-user"></i>
-            </div>
-            <div class="dropdown-content">
-                <a href="./settings.php">Settings</a>
-                <a href="./logout.php">Logout</a>
-            </div>
-        </div>';
+            <div class="user-dropdown">
+                <div class="dropdown-content">
+                    <button class="dropdown-button" onclick="location.href=\'./settings.php\';">Settings</button>
+                    <button class="dropdown-button" onclick="location.href=\'./logout.php\';">Logout</button>
+                </div>
+            </div>';
                 } else {
                     // If not logged in, display the login and signup buttons
                     echo '<a href="login.php" class="login-button">Login</a>';
                     echo '<a href="signup.php" class="signup-button">Sign Up</a>';
                 }
                 ?>
-
     </nav>
 
 
@@ -175,9 +171,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart']) && isse
                             if ($result && mysqli_num_rows($result) > 0) {
                                 $row = mysqli_fetch_assoc($result);
 
-                                    //Set quantity to 1
-                                    $itemQuantities[$productID] = 1;
-                                
+                                //Set quantity to 1
+                                $itemQuantities[$productID] = 1;
+
 
                                 // Get the quantity for this item
                                 $quantity = $itemQuantities[$productID];
@@ -203,13 +199,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart']) && isse
                     ?>
                     <a href="cart.php"><button class="modalbutton">Go to Cart</button></a>
                 </div>
-
-
-
             </div>
         </div>
     </div>
-
     <script src="../js/store.js"></script>
     <script src="../js/mice.js"></script>
 </body>
