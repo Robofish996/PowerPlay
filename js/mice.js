@@ -24,3 +24,17 @@ window.onclick = function(event) {
   }
 }
 
+    // Function to scroll to the top of the page
+    function scrollToTop() {
+      window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+      });
+  }
+
+  // Get the back-to-top button element
+  let backButton = document.getElementById("back-to-top-button");
+
+  // Adding event listener to button
+  backButton.addEventListener("click", scrollToTop);
+

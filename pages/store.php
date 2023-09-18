@@ -121,7 +121,7 @@ $mysqli->close();
             <li><a href="./monitors.php">Monitors</a></li>
             <li><a href="../pages/cart.php">Cart</a></li>
             <li><a href="./settings.php">Settings</a></li>
-            <li><a href="./logout.php">Logout.php</a></li>
+            <li><a href="./logout.php">Logout</a></li>
         </ul>
     </aside>
 

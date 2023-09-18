@@ -202,6 +202,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart']) && isse
             </div>
         </div>
     </div>
+    <button id="back-to-top-button" class="back-to-top-button">Back to Top</button>
+
     <script src="../js/store.js"></script>
     <script src="../js/mice.js"></script>
 </body>
