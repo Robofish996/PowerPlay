@@ -42,8 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart']) && isse
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Browse Mice</title>
-    <link rel="stylesheet" type="text/css" href="../css/mice.css">
+    <title>Browse Keyboards</title>
+    <link rel="stylesheet" type="text/css" href="../css/keyboards.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
@@ -57,9 +57,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart']) && isse
         <div class="container">
             <div class="navbar-header">
                 <div class="hamburger-menu" id="hamburger-menu">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
                 </div>
             </div>
             <!-- Navbar buttons -->
@@ -69,27 +66,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart']) && isse
                 if (isset($_SESSION['username'])) {
                     // If logged in, display the user dropdown menu
                     echo '
-        <div class="user-dropdown">
-            <div class="profile-circle">
-            <i class="fas fa-user"></i>
-            </div>
-            <div class="dropdown-content">
-                <a href="./settings.php">Settings</a>
-                <a href="./logout.php">Logout</a>
-            </div>
-        </div>';
+            <div class="user-dropdown">
+                <div class="dropdown-content">
+                    <button class="dropdown-button" onclick="location.href=\'./settings.php\';">Settings</button>
+                    <button class="dropdown-button" onclick="location.href=\'./logout.php\';">Logout</button>
+                </div>
+            </div>';
                 } else {
                     // If not logged in, display the login and signup buttons
                     echo '<a href="login.php" class="login-button">Login</a>';
                     echo '<a href="signup.php" class="signup-button">Sign Up</a>';
                 }
                 ?>
-
     </nav>
 
 
     <div class="content">
-        <h1>Get the right mouse for you!</h1>
+        <h1>Pawn Noobs with your keyboard!</h1>
 
         <div class="container">
             <div class="products-container">
@@ -132,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart']) && isse
             <li><a href="./laptops.php">Laptops</a></li>
             <li><a href="../pages/cart.php">Cart</a></li>
             <li><a href="./settings.php">Settings</a></li>
-            <li><a href="./logout.php">Logout.php</a></li>
+            <li><a href="./logout.php">Logout</a></li>
         </ul>
     </aside>
     <!--Open The Modal -->
@@ -175,9 +168,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart']) && isse
                             if ($result && mysqli_num_rows($result) > 0) {
                                 $row = mysqli_fetch_assoc($result);
 
-                                    //Set quantity to 1
-                                    $itemQuantities[$productID] = 1;
-                                
+                                //Set quantity to 1
+                                $itemQuantities[$productID] = 1;
+
 
                                 // Get the quantity for this item
                                 $quantity = $itemQuantities[$productID];
@@ -203,12 +196,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart']) && isse
                     ?>
                     <a href="cart.php"><button class="modalbutton">Go to Cart</button></a>
                 </div>
-
-
-
             </div>
         </div>
     </div>
+    <button id="back-to-top-button" class="back-to-top-button">Back to Top</button>
 
     <script src="../js/store.js"></script>
     <script src="../js/mice.js"></script>

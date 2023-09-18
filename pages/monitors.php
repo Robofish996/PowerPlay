@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart']) && isse
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Browse Monitors</title>
-    <link rel="stylesheet" type="text/css" href="../css/keyboards.css">
+    <link rel="stylesheet" type="text/css" href="../css/mice.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
@@ -57,9 +57,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart']) && isse
         <div class="container">
             <div class="navbar-header">
                 <div class="hamburger-menu" id="hamburger-menu">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
                 </div>
             </div>
             <!-- Navbar buttons -->
@@ -124,11 +121,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart']) && isse
         <ul class="sidebar-menu">
             <li><a href="./store.php">Home</a></li>
             <li><a href="./mice.php">Mice</a></li>
+            <li><a href="./monitors.php">Meyboards</a></li>
             <li><a href="./keyboards.php">Keyboards</a></li>
             <li><a href="./laptops.php">Laptops</a></li>
             <li><a href="../pages/cart.php">Cart</a></li>
             <li><a href="./settings.php">Settings</a></li>
-            <li><a href="./logout.php">Logout.php</a></li>
+            <li><a href="./logout.php">Logout</a></li>
         </ul>
     </aside>
     <!--Open The Modal -->

@@ -57,9 +57,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart']) && isse
         <div class="container">
             <div class="navbar-header">
                 <div class="hamburger-menu" id="hamburger-menu">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
                 </div>
             </div>
             <!-- Navbar buttons -->
@@ -128,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart']) && isse
             <li><a href="./laptops.php">Laptops</a></li>
             <li><a href="../pages/cart.php">Cart</a></li>
             <li><a href="./settings.php">Settings</a></li>
-            <li><a href="./logout.php">Logout.php</a></li>
+            <li><a href="./logout.php">Logout</a></li>
         </ul>
     </aside>
     <!--Open The Modal -->
