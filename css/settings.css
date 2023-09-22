@@ -3,7 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body{
+    background-image: url(../css/images/settings_backGround.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h2{
+    color: #fff;
+}
 /* Navbar styles */
 .navbar {
     background-color: #333;
@@ -21,8 +28,8 @@
     cursor: pointer;
     margin-left: 10px;
     position: absolute;
-    left: 10px; 
-    top: 50%; 
+    left: 10px;
+    top: 50%;
     transform: translateY(-50%);
 }
 
@@ -63,8 +70,8 @@
 .sidebar {
     position: fixed;
     top: 45px;
-    left: -250px; 
-    width: 250px;
+    left: -250px;
+    width: 220px;
     height: 100%;
     background-color: #333;
     color: #fff;
@@ -102,7 +109,7 @@
     color: #fff;
     padding: 10px 20px;
     display: block;
-    transition: background-color 0.3s ease; /* Added transition property */
+    transition: background-color 0.3s ease;
 }
 
 /* Hover effect */
@@ -110,90 +117,6 @@
     background-color: #565657; /* Change background color on hover */
 }
 
-/* Rest of your styles... */
-
-
-/* Banner styles */
-.banner {
-    background-color: #333;
-    position: relative;
-    text-align: center;
-}
-
-.banner img {
-    max-width: 100%;
-    height: auto;
-}
-
-.banner-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 36px;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-/* Category Tile styles */
-.tileHeading {
-    background-color: #333;
-    text-align: center;
-    text-decoration: underline;
-    color: #eee;
-    width: 100%;
-}
-
-.category-tiles {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 20px;
-    background-color: #979595;
-    width: 100%;
-}
-
-.category-tile {
-    width: 200px;
-    background-color: #4b4a4a;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 50px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.category-tile img {
-    max-width: 100%;
-    height: auto;
-}
-
-.category-tile h3 {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    color: #eee;
-}
-
-.category-tile a {
-    text-decoration: none;
-    color: #333;
-}
-
-.category-tile:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Media query for mobile */
-@media (max-width: 768px) {
-    .navbar-logo {
-        display: none;
-    }
-}
 /* Button styles for dropdown */
 .dropdown-button {
     background-color: #333;
@@ -211,4 +134,84 @@
 
 .container {
     text-align: center;
+}
+
+/* Underline headings */
+h1, h2, h3, h4, h5, h6 {
+    text-decoration: underline;
+}
+.user-info {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: left; /* Align text to the left */
+    margin-bottom: 10px;
+}
+
+.user-info h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.info-item label {
+    font-size: 16px;
+    color: #fff;
+    width: 100px; /* Adjust the width as needed */
+}
+
+.info-item span {
+    font-size: 16px;
+    color: #fff;
+}
+
+
+.form-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+.form-container h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+.form-container p{
+    color: #fff;
+}
+.form-container label {
+    display: block;
+    font-size: 16px;
+    margin-top: 10px;
+    color: #fff; 
+}
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container input[type="email"] {
+    width: 50%;
+    padding: 5px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 3px;
+}
+.form-container button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    width: 50%;
+}
+.form-container button:hover {
+    background-color: #ee31de;
 }

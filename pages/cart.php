@@ -1,107 +1,116 @@
 <?php
-session_start();
+// Include necessary files and configure your database connection (already done in your code).
+include_once '../include/header.php';
+include_once '../include/config.php';
 
-if (!isset($_SESSION['cart'])) {
-    $_SESSION['cart'] = array();
-}
-
-// Add a product to the cart
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart']) && isset($_POST['product_id'])) {
-    $productID = $_POST['product_id'];
-    
-    // Check if the product is already in the cart
-    if (!in_array($productID, $_SESSION['cart'])) {
-        $_SESSION['cart'][] = $productID;
-        echo "Product added to the cart.";
-    } else {
-        echo "Product is already in the cart.";
-    }
-}
-
-// Remove a product from the cart
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['remove_from_cart']) && isset($_POST['product_id'])) {
-    $productID = $_POST['product_id'];
-    
-    // Find the index of the product in the cart
-    $index = array_search($productID, $_SESSION['cart']);
-    
-    // If found, remove it from the cart
-    if ($index !== false) {
-        unset($_SESSION['cart'][$index]);
-        echo "Product removed from the cart.";
-    } else {
-        echo "Product not found in the cart.";
-    }
-}
-
-// Fetch product information for items in the cart
-$cartItems = array();
+// Retrieve cart items from the database.
+$cartItems = $pdo->query("SELECT * FROM cart")->fetchAll(PDO::FETCH_OBJ);
 $totalPrice = 0;
 
-if (!empty($_SESSION['cart'])) {
-    // Database connection
-    $connection = mysqli_connect('localhost', 'Mathew', 'mysql@123', 'powerplay');
-    if (!$connection) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+$paymentSuccessful = False; // Set this to true only after a successful payment
 
-    // Fetch product information for each item in the cart
-    foreach ($_SESSION['cart'] as $productID) {
-        $query = "SELECT product_id, product_name, product_price, product_image_path FROM products WHERE product_id = $productID";
-        $result = mysqli_query($connection, $query);
-
-        if ($result && mysqli_num_rows($result) > 0) {
-            $row = mysqli_fetch_assoc($result);
-            $cartItems[] = $row;
-
-            // Calculate the total price for this item
-            $totalPrice += $row['product_price'];
-        }
-    }
-
-    // Close the database connection
-    mysqli_close($connection);
+if ($paymentSuccessful) {
+    // Clear the cart data (e.g., delete records from the cart table).
+    $pdo->exec("DELETE FROM cart"); // Example: Delete all records from the 'cart' table
 }
+
 ?>
 
+<!-- Cart page HTML -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Cart</title>
+    <!-- ... Your head section ... -->
 </head>
 
 <body>
-    <h1>Your Cart</h1>
 
-    <!-- List of products in the cart -->
-    <?php if (!empty($cartItems)) : ?>
-        <ul>
-            <?php foreach ($cartItems as $item) : ?>
-                <li>
-                    <img src="<?php echo $item['product_image_path']; ?>" alt="<?php echo $item['product_name']; ?>" width="100">
-                    <?php echo $item['product_name']; ?> - Price: R <?php echo number_format($item['product_price'], 2); ?>
+     <div class="container">
 
-                    <!-- Form to remove the product from the cart -->
-                    <form method="post">
-                        <input type="hidden" name="remove_from_cart" value="1">
-                        <input type="hidden" name="product_id" value="<?php echo $item['product_id']; ?>">
-                        <button type="submit">Remove from Cart</button>
-                    </form>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    <?php else : ?>
-        <p>Your cart is empty.</p>
-    <?php endif; ?>
+        <div class="row">
+            <table class="table">
 
-    <!-- Grand Total -->
-    <p>Grand Total: R <?php echo number_format($totalPrice, 2); ?></p>
+                <thead class="table-primary">
+                    <tr>
 
-    <!-- Link back to the product page -->
-    <a href="mice.php">Back to Product Page</a>
+                        <th scope="col ">Name</th>
+                        <th scope="col ">Quantity</th>
+                        <th scope="col ">Price</th>
+                        <th scope="col ">Remove</th>
+                    </tr>
+                </thead>
+                <?php foreach ($cartItems as $cartItem) : ?>
+                    <tbody>
+                        <tr>
+
+                            <td><?php echo $cartItem->name; ?></td>
+                            <td><?php echo $cartItem->quantity; ?></td>
+                            <td><?php echo $cartItem->price; ?></td>
+                            <td>
+                                <form action="<?php echo APPURL; ?>/shopPages/remove_from_cart.php" method="POST">
+                                    <input type="hidden" name="product_id" value="<?php echo $cartItem->id; ?>">
+                                    <button type="submit" name="remove" class="btn btn-secondary text-white btn-sm">Remove</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <?php
+                        // Calculate the product total (price multiplied by quantity) and add it to the total price
+                        $productTotal = $cartItem->price * $cartItem->quantity;
+                        $totalPrice += $productTotal;
+                        ?>
+                    </tbody>
+                <?php endforeach; ?>
+                <thead class="table-secondary">
+                    <tr>
+                        <th scope="col">Total</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td colspan="2"></td>
+                    <td>R<?php echo number_format($totalPrice, 2); ?></td>
+                    <td>
+                        <div id="paypal-button-container"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        <!-- Replace "test" with your own sandbox Business account app client ID -->
+        <script src="https://www.paypal.com/sdk/js?client-id=Ac4BivSthi2Ef4zH2li-a6Gqs3fh6ix5rmHyQl28-g23BRjKWqbSFPfd6tiOBaVKORFQhtzhsvze-Gnc&currency=USD"></script>
+        <!-- Set up a container element for the button -->
+        <div id="paypal-button-container"></div>
+        <script>
+            paypal.Buttons({
+                // Sets up the transaction when a payment button is clicked
+                createOrder: (data, actions) => {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: <?php echo $totalPrice; ?>, // Can also reference a variable or function
+                            }
+                        }]
+                    });
+                },
+                // Finalize the transaction after payer approval
+                onApprove: (data, actions) => {
+                    return actions.order.capture().then(function (orderData) {
+                        // Set paymentSuccessful to true after a successful payment
+                        <?php $paymentSuccessful = true; ?>
+                        window.location.href = '../pages/store.php';
+                    });
+                }
+            }).render('#paypal-button-container');
+        </script>
+    </div>
+    <?php
+     include_once '../include/footer.php';
+     ?>
+   
 </body>
 
 </html>

@@ -1,9 +1,5 @@
 <?php
-// Connection details
-$host = 'localhost';
-$username = 'Mathew';
-$password = 'mysql@123';
-$database = 'powerplay';
+include_once 'config.php';
 
 // Error message
 $error_message = '';
@@ -44,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -51,18 +48,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     <title>Register</title>
     <link rel="stylesheet" type="text/css" href="../css/signup.css">
 </head>
+
 <body>
-<video id="video-background" autoplay loop muted>
+    <video id="video-background" autoplay loop muted>
         <source src="../css/videos/signUpVid.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <div class="container">
         <div class="form-container">
             <h1 class="signupHeading">Sign Up Now</h1>
-            <?php if (isset($success_message)): ?>
+            <?php if (isset($success_message)) : ?>
                 <p class="success"><?php echo $success_message; ?></p>
             <?php endif; ?>
-            <?php if (isset($error_message)): ?>
+            <?php if (isset($error_message)) : ?>
                 <p class="error"><?php echo $error_message; ?></p>
             <?php endif; ?>
             <form action="" method="post">
@@ -80,4 +78,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
         </div>
     </div>
 </body>
+
 </html>
