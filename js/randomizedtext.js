@@ -1,6 +1,6 @@
   // Function to reveal the target text with randomized characters
   function revealText(targetElement, targetText, currentIndex) {
-    const revealInterval = 175; // Milliseconds between letter changes
+    const revealInterval = 450; // Milliseconds between letter changes
     const revealTimer = setInterval(function () {
       if (currentIndex < targetText.length) {
         const randomLetter = String.fromCharCode(

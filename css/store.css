@@ -413,7 +413,7 @@ table tbody tr:hover {
     margin-bottom: 10px;
 }
 
-/* Add additional styles as needed */
+
 
 /* Example for the PayPal button */
 #paypal-button-container {
@@ -423,3 +423,65 @@ table tbody tr:hover {
 .text-center{
     text-decoration: underline;
 }
+/* Add this to your CSS file */
+.jumbotron {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #f8f9fa;
+}
+
+.jumbotron-item {
+    flex-basis: 23%;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background-color: #007bff;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 24px;
+    margin: 0 auto 20px;
+}
+
+.circle i {
+    position: relative; /* Ensure icon is positioned correctly */
+    z-index: 1; /* Ensure the icon appears above the circle */
+}
+
+h2 {
+    font-size: 20px;
+    color: #343a40;
+}
+
+p.lead {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .circle {
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+        margin: 0 auto 15px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    p.lead {
+        font-size: 14px;
+    }
+}
+
+
+
+
