@@ -1,28 +1,37 @@
 <?php
-// Include necessary files and configure your database connection (already done in your code).
 include_once '../include/header.php';
 include_once '../include/config.php';
 
-// Check if the payment was successful (you may have a mechanism to determine this)
-$paymentSuccessful = true; // Replace with your actual payment check
+// Check if the payment was successful
+$paymentSuccessful = true; 
 
+// Define the thank you message
+$thankYouMessage = $paymentSuccessful ? 'Thank you for your purchase!' : 'Payment failed.';
+
+// Clear the cart data if payment was successful
 if ($paymentSuccessful) {
-    // Clear the cart data (e.g., delete records from the cart table).
-    $pdo->exec("DELETE FROM cart"); // Example: Delete all records from the 'cart' table
+    $pdo->exec("DELETE FROM cart"); 
 }
-
-// Rest of your "thank you" page content
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- ... Your head section ... -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+
 </head>
-
 <body>
-    <!-- ... Your "thank you" page content ... -->
-    <?php
-    include_once '../include/footer.php';
-
-    ?>
+    <div class="container">
+        <h1>Thank You</h1>
+        <p class="message"><?php echo $thankYouMessage; ?></p>
+        <p>You will recieve a email with the invoice number</p>
+    </div>
+    <script>
+        setTimeout(function () {
+            window.location.href = 'store.php';
+        }, 5000); // 5000 milliseconds (5 seconds)
+    </script>
+</body>
+<?php include_once '../include/footer.php'; ?>
+</html>

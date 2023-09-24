@@ -12,7 +12,7 @@ if (isset($_POST['remove'])) {
 
     if ($stmt->execute()) {
         // Redirect back to the cart page or update the cart UI
-        header("Location: cart.php");
+        header("Location: ../pages/cart.php");
         exit();
     } else {
         // Handle the error, e.g., display an error message

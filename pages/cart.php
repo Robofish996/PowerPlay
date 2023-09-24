@@ -15,9 +15,7 @@ if ($paymentSuccessful) {
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- ... Your head section ... -->
-</head>
+
 
 <body>
     <div class="container">
@@ -74,6 +72,27 @@ if ($paymentSuccessful) {
         <script src="https://www.paypal.com/sdk/js?client-id=Ac4BivSthi2Ef4zH2li-a6Gqs3fh6ix5rmHyQl28-g23BRjKWqbSFPfd6tiOBaVKORFQhtzhsvze-Gnc&currency=USD"></script>
         <!-- Set up a container element for the button -->
         <div id="paypal-button-container"></div>
+        <!-- Category Buttons Section -->
+<section>
+    <h4 class="productButtonHeading">Continue Shopping ?</h4>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-3 mb-4">
+                <a href="products.php?id=1" class="btn btn-primary btn-block">Mice</a>
+            </div>
+            <div class="col-md-3 mb-4">
+                <a href="products.php?id=2" class="btn btn-primary btn-block">Keyboards</a>
+            </div>
+            <div class="col-md-3 mb-4">
+                <a href="products.php?id=3" class="btn btn-primary btn-block">Monitors</a>
+            </div>
+            <div class="col-md-3 mb-4">
+                <a href="products.php?id=4" class="btn btn-primary btn-block">Laptops</a>
+            </div>
+           
+        </div>
+    </div>
+</section>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 // Render the PayPal button
@@ -101,6 +120,7 @@ if ($paymentSuccessful) {
     <?php
     include_once '../include/footer.php';
     ?>
+
 </body>
 
 </html>
