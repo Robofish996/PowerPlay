@@ -115,78 +115,67 @@
 
 /* Banner styles */
 .banner {
-    background-color: #333;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('./css/images/pexels-artem-podrez-7773543.jpg') center/cover no-repeat;
     position: relative;
     text-align: center;
+    color: #fff;
 }
 
-.banner img {
-    max-width: 100%;
-    height: auto;
-}
+
 
 .banner-text {
     position: absolute;
-    top: 50%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 36px;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-/* Category Tile styles */
-.tileHeading {
-    background-color: #333;
-    text-align: center;
+    font-family: 'Your Custom Font', sans-serif; /* Add your custom font here */
+    letter-spacing: 4px; /* Adjust the letter spacing */
+    text-transform: uppercase; /* Uppercase text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     text-decoration: underline;
-    color: #eee;
-    width: 100%;
+    font-weight: bold;
 }
-
-.category-tiles {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 20px;
-    background-color: #979595;
-    width: 100%;
-}
-
-.category-tile {
-    width: 200px;
-    background-color: #4b4a4a;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 50px;
+/* Category Tiles Section */
+.tileHeading {
+    background-color: #333; /* Background color for the section title */
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    color: #fff; /* Text color for the section title */
+    padding: 10px 0; /* Padding for the section title */
+    text-decoration: underline;
 }
 
-.category-tile img {
-    max-width: 100%;
-    height: auto;
+/* Apply hover effect to the cards */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-right: 20px !important;
+
 }
 
-.category-tile h3 {
+.card:hover {
+    transform: scale(1.05); /* Scale up on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Adjust card title and button styles */
+.card-title {
     font-size: 1.2rem;
     margin-top: 10px;
-    color: #eee;
+    text-transform: capitalize; /* Capitalize card titles */
 }
 
-.category-tile a {
-    text-decoration: none;
-    color: #333;
+.card a.btn-primary {
+    background-color: #3e5c76; /* Background color for the "Explore Gear" button */
+    color: #fff; /* Text color for the button */
+    border: none;
 }
 
-.category-tile:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+.card a.btn-primary:hover {
+    background-color: #748cab; /* Background color on hover */
 }
+
+
+
 
 /* Media query for mobile */
 @media (max-width: 768px) {
@@ -211,4 +200,92 @@
 
 .container {
     text-align: center;
+}
+/* Styling for the main footer container */
+footer {
+    background-color: #333; /* Set the background color */
+    color: #fff; /* Set text color */
+    padding: 30px 0; /* Add padding to the top and bottom */
+}
+
+/* Styling for the contact information section */
+.footer-contact {
+    margin-bottom: 30px; /* Add spacing below this section */
+}
+
+.footer-contact h4 {
+    font-size: 20px; /* Adjust the title's font size */
+    margin-bottom: 10px; /* Add spacing below the title */
+}
+
+.footer-contact p {
+    margin: 0; /* Remove default margins for paragraphs */
+}
+
+/* Styling for the social media links section */
+.footer-social {
+    margin-bottom: 30px; /* Add spacing below this section */
+}
+
+.footer-social h4 {
+    font-size: 20px; /* Adjust the title's font size */
+    margin-bottom: 10px; /* Add spacing below the title */
+}
+
+.footer-social ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding for the list */
+}
+
+.footer-social li {
+    margin-bottom: 10px; /* Add spacing between social media links */
+}
+
+.footer-social a {
+    text-decoration: none; /* Remove underlines from links */
+    color: #fff; /* Set link text color */
+}
+
+/* Styling for the quick links section */
+.footer-links {
+    margin-bottom: 30px; /* Add spacing below this section */
+}
+
+.footer-links h4 {
+    font-size: 20px; /* Adjust the title's font size */
+    margin-bottom: 10px; /* Add spacing below the title */
+}
+
+.footer-links ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding for the list */
+}
+
+.footer-links li {
+    margin-bottom: 10px; /* Add spacing between quick links */
+}
+
+.footer-links a {
+    text-decoration: none; /* Remove underlines from links */
+    color: #fff; /* Set link text color */
+}
+
+/* Styling for the footer bottom section */
+.footer-bottom {
+    background-color: #222; /* Set background color for the bottom section */
+    padding: 10px 0; /* Add padding to the top and bottom */
+    text-align: center; /* Center-align the content */
+}
+
+.footer-bottom p {
+    margin: 0; /* Remove default margins for paragraphs */
+    color: #fff; /* Set text color for the copyright statement */
+}
+
+.footer-bottom a {
+    color: #fff; /* Set link text color for Privacy Policy and Terms of Service links */
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline; /* Underline the links on hover */
 }

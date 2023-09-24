@@ -1,0 +1,61 @@
+    /* Center the control arrows vertically */
+    .carousel-control-prev, .carousel-control-next {
+        top: 50%;
+        transform: translateY(-50%);
+        background-color:#1d2d44;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        font-size: 18px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    /* Center the circular customer image */
+    .customer-card img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto;
+    }
+    
+
+    /* Style the Customer Card Container */
+    .customer-card {
+        text-align: center;
+        background: #a8a8a8;
+        padding: 20px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Style the Carousel Control Arrows on hover */
+    .carousel-control-prev:hover, .carousel-control-next:hover {
+        background-color:#0d1321 ; /* Change arrow background color on hover */
+    }
+    .customer-card {
+        text-align: center; /* Center text */
+        color: #333; /* Text color */
+    }
+    
+    .customer-card h3 {
+        font-size: 20px; /* Adjust font size as needed */
+        margin: 10px 0; /* Add margin for spacing */
+    }
+    
+    .customer-card p {
+        font-size: 16px; /* Adjust font size as needed */
+    }
+    .customer-reviews {
+        text-align: center;
+        padding: 20px 0; /* Add padding for spacing */
+        background-color: #333; /* Background color */
+        color: #fff; /* Text color */
+        font-size: 24px; /* Adjust font size as needed */
+        font-weight: bold; /* Apply bold style */
+    }
+    
+    
