@@ -370,3 +370,56 @@ table tbody tr:hover {
     text-align: center;
     text-decoration: underline;
 }
+/* Styles for cart.php page */
+
+.cart-title {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cart-table table {
+    width: 100%;
+}
+
+.cart-table .table {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart-table thead {
+    background-color: #f8f9fa;
+}
+
+.cart-table th {
+    text-align: left;
+}
+
+.cart-table .btn-sm {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.continue-shopping {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.productButtonHeading {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Add additional styles as needed */
+
+/* Example for the PayPal button */
+#paypal-button-container {
+    text-align: center;
+}
+
+.text-center{
+    text-decoration: underline;
+}

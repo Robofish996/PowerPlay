@@ -2,7 +2,7 @@
 
 include_once '../include/header.php';
 include_once '../include/config.php';
-include_once '../include/customer_reviews.php';
+
 
 
 
@@ -22,31 +22,7 @@ $allProducts = $products->fetchAll(PDO::FETCH_OBJ);
     </div>
 </div>
 
-<!-- Customer Reviews Section -->
-<section class="customer-reviews">
-    <h3 class="tileHeading">Customer Reviews</h3>
-    <div id="customerCarousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <?php foreach ($customerReviews as $index => $review) : ?>
-                <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
-                    <div class="customer-card">
-                        <img src="<?php echo $review['image_url']; ?>" alt="<?php echo $review['name']; ?>">
-                        <h3><?php echo $review['name']; ?></h3>
-                        <p><?php echo $review['review']; ?></p>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
-        <a class="carousel-control-prev" href="#customerCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#customerCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-</section>
+
 
 
 <!-- Category Tiles Section -->

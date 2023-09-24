@@ -2,31 +2,33 @@
 // Include necessary files and configure your database connection (already done in your code).
 include_once '../include/header.php';
 include_once '../include/config.php';
+
 // Retrieve cart items from the database.
 $cartItems = $pdo->query("SELECT * FROM cart")->fetchAll(PDO::FETCH_OBJ);
 $totalPrice = 0;
-$paymentSuccessful = False; // Set this to true only after a successful payment
+$paymentSuccessful = false; // Set this to true only after a successful payment
+
 if ($paymentSuccessful) {
     // Clear the cart data (e.g., delete records from the cart table).
     $pdo->exec("DELETE FROM cart"); // Example: Delete all records from the 'cart' table
 }
 ?>
-<!-- Cart page HTML -->
 <!DOCTYPE html>
 <html lang="en">
-
-
-
+<head>
+    <!-- Add your page title and other head elements here -->
+</head>
 <body>
-    <div class="container">
+    <div class="container cart-container">
         <div class="row">
-            <table class="table">
+            <h1 class="cart-title">Your Cart</h1>
+            <table class="table cart-table">
                 <thead class="table-primary">
                     <tr>
-                        <th scope="col ">Name</th>
-                        <th scope="col ">Quantity</th>
-                        <th scope="col ">Price</th>
-                        <th scope="col ">Remove</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Remove</th>
                     </tr>
                 </thead>
                 <?php foreach ($cartItems as $cartItem) : ?>
@@ -34,11 +36,11 @@ if ($paymentSuccessful) {
                         <tr>
                             <td><?php echo $cartItem->name; ?></td>
                             <td><?php echo $cartItem->quantity; ?></td>
-                            <td><?php echo $cartItem->price; ?></td>
+                            <td>$<?php echo $cartItem->price; ?></td>
                             <td>
                                 <form action="<?php echo APPURL; ?>/pages/remove_from_cart.php" method="POST">
                                     <input type="hidden" name="product_id" value="<?php echo $cartItem->id; ?>">
-                                    <button type="submit" name="remove" class="btn btn-secondary text-white btn-sm">Remove</button>
+                                    <button type="submit" name="remove" class="btn btn-secondary btn-sm cart-remove-btn">Remove</button>
                                 </form>
                             </td>
                         </tr>
@@ -59,7 +61,7 @@ if ($paymentSuccessful) {
                 </thead>
                 <tr>
                     <td colspan="2"></td>
-                    <td>R<?php echo number_format($totalPrice, 2); ?></td>
+                    <td>$<?php echo number_format($totalPrice, 2); ?></td>
                     <td>
                         <div id="paypal-button-container"></div>
                     </td>
@@ -67,15 +69,14 @@ if ($paymentSuccessful) {
             </table>
         </div>
     </div>
-    <div class="container">
+    <div class="container cart-buttons">
         <!-- Replace "test" with your own sandbox Business account app client ID -->
         <script src="https://www.paypal.com/sdk/js?client-id=Ac4BivSthi2Ef4zH2li-a6Gqs3fh6ix5rmHyQl28-g23BRjKWqbSFPfd6tiOBaVKORFQhtzhsvze-Gnc&currency=USD"></script>
-        <!-- Set up a container element for the button -->
         <div id="paypal-button-container"></div>
+    </div>
+    <div class="container category-buttons">
         <!-- Category Buttons Section -->
-<section>
-    <h4 class="productButtonHeading">Continue Shopping ?</h4>
-    <div class="container">
+        <h4 class="productButtonHeading">Continue Shopping ?</h4>
         <div class="row justify-content-center">
             <div class="col-md-3 mb-4">
                 <a href="products.php?id=1" class="btn btn-primary btn-block">Mice</a>
@@ -89,11 +90,12 @@ if ($paymentSuccessful) {
             <div class="col-md-3 mb-4">
                 <a href="products.php?id=4" class="btn btn-primary btn-block">Laptops</a>
             </div>
-           
         </div>
     </div>
-</section>
-        <script>
+    <?php
+    include_once '../include/footer.php';
+    ?>
+            <script>
             document.addEventListener('DOMContentLoaded', function() {
                 // Render the PayPal button
                 paypal.Buttons({
@@ -116,11 +118,5 @@ if ($paymentSuccessful) {
                 }).render('#paypal-button-container');
             })
         </script>
-    </div>
-    <?php
-    include_once '../include/footer.php';
-    ?>
-
 </body>
-
 </html>
