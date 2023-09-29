@@ -48,33 +48,34 @@ $allProducts = $products->fetchAll(PDO::FETCH_OBJ);
                 <i class="fa fa-certificate fa-stack-1x fa-inverse"></i>
             </div>
             <h2>EXPERT ADVICE</h2>
-            <p class="lead">Our team of experts is here to provide you with guidance and recommendations so you can make informed decisions.</p>
+            <p class="lead">Our seasoned team of professionals provides you with knowledgeable insights and suggestions for informed decisions and progress.</p>
         </div>
     </div>
 
-    
 
 
 
-    <!-- Category Tiles Section -->
-    <section class="category-tiles">
-        <div class="container">
-            <h3 class="section-heading">Browse through our various collection</h3>
-            <div class="row justify-content-between">
-                <?php foreach ($allProducts as $product) : ?>
-                    <div class="col-md-3 mb-4">
-                        <div class="card">
-                            <img src="<?php echo APPURL; ?>/image/<?php echo $product->image; ?>" class="card-img-top" alt="<?php echo $product->name; ?>">
-                            <div class="card-body">
-                                <h5 class="card-title text-capitalize"><?php echo $product->name; ?></h5>
-                                <a href="products.php?id=<?php echo $product->id; ?>" class="btn btn-primary">Explore Gear</a>
-                            </div>
+
+<!-- Category Tiles Section -->
+<section class="category-tiles">
+    <div class="container" style="max-width: 1700px;">
+        <h2 class="section-heading">Browse through our various collection</h2>
+        <div class="row justify-content-between">
+            <?php foreach ($allProducts as $product) : ?>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="<?php echo APPURL; ?>/image/<?php echo $product->image; ?>" class="card-img-top" alt="<?php echo $product->name; ?>">
+                        <div class="card-body">
+                            <h5 class="card-title text-capitalize"><?php echo $product->name; ?></h5>
+                            <a href="products.php?id=<?php echo $product->id; ?>" class="btn btn-primary">Explore Gear</a>
                         </div>
                     </div>
-                <?php endforeach; ?>
-            </div>
+                </div>
+            <?php endforeach; ?>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <?php include_once '../include/footer.php'; ?>
 </body>

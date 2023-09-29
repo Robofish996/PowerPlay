@@ -1,0 +1,89 @@
+
+
+
+/* Full-width Map Section */
+#map-location {
+    margin-top: 5rem;
+}
+
+/* Introduction Section */
+#introduction {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+#introduction h2 {
+    font-size: 28px;
+    text-decoration: underline;
+    margin-bottom: 1rem;
+}
+
+#introduction p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0 auto;
+}
+
+/* History Section */
+#history {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+#history h2 {
+    font-size: 28px;
+    text-decoration: underline;
+    margin-bottom: 1rem;
+}
+
+#history p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0 auto;
+}
+
+/* Customer Reviews Section */
+.customer-reviews {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.tileHeading {
+    background-color: #333;
+    text-align: center;
+    color: #fff;
+    padding: 10px 0;
+    text-decoration: underline;
+    margin-bottom: 1rem;
+}
+
+#customerCarousel {
+    margin-top: 2rem;
+}
+
+.carousel-inner {
+    text-align: center;
+}
+
+.customer-card {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.customer-card img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%;
+}
+
+.customer-card h3 {
+    font-size: 24px;
+    margin-top: 1rem;
+}
+
+.customer-card p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 1rem auto;
+}

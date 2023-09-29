@@ -42,7 +42,7 @@ foreach ($cartProducts as $product) {
 
 </html>
 <section id="product-section">
-    <div class="container">
+    <div class="container" style="max-width: 1920px;">
         <div class="row">
             <?php $i = 0; ?>
             <?php foreach ($getAllProducts as $product) : ?>
@@ -69,6 +69,7 @@ foreach ($cartProducts as $product) {
         </div>
     </div>
 </section>
+
 
 <!-- Button to open the modal -->
 <button id="myBtn" data-toggle="modal" data-target="#myModal">
@@ -134,7 +135,12 @@ foreach ($cartProducts as $product) {
             <div class="col-md-3 mb-4">
                 <a href="products.php?id=4" class="btn btn-primary btn-block">Laptops</a>
             </div>
-           
+            <div class="col-md-3 mb-4">
+                <a href="products.php?id=5" class="btn btn-primary btn-block">Headsets</a>
+            </div>
+            <div class="col-md-3 mb-4">
+                <a href="products.php?id=6" class="btn btn-primary btn-block">Gaming Chairs</a>
+            </div>
         </div>
     </div>
 </section>

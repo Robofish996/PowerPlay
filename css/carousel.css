@@ -34,28 +34,31 @@
 
     /* Style the Carousel Control Arrows on hover */
     .carousel-control-prev:hover, .carousel-control-next:hover {
-        background-color:#0d1321 ; /* Change arrow background color on hover */
+        background-color:#0d1321 ; 
     }
+      /* Customizing text color and aligning  it center */
     .customer-card {
-        text-align: center; /* Center text */
-        color: #333; /* Text color */
+        text-align: center; 
+        color: #333;
     }
-    
+ 
     .customer-card h3 {
-        font-size: 20px; /* Adjust font size as needed */
-        margin: 10px 0; /* Add margin for spacing */
+        font-size: 20px; 
+        margin: 10px 0; 
     }
     
     .customer-card p {
-        font-size: 16px; /* Adjust font size as needed */
+        font-size: 16px; 
     }
     .customer-reviews {
+        margin-top: 10px;
         text-align: center;
-        padding: 20px 0; /* Add padding for spacing */
-        background-color: #333; /* Background color */
-        color: #fff; /* Text color */
-        font-size: 24px; /* Adjust font size as needed */
-        font-weight: bold; /* Apply bold style */
+        padding: 20px 0;
+        background-color: #333;
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+        
     }
     
     

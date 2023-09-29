@@ -1,6 +1,6 @@
-  // Function to reveal the target text with randomized characters
+  // Function to randomize banner heading and then appear text
   function revealText(targetElement, targetText, currentIndex) {
-    const revealInterval = 450; // Milliseconds between letter changes
+    const revealInterval = 90; 
     const revealTimer = setInterval(function () {
       if (currentIndex < targetText.length) {
         const randomLetter = String.fromCharCode(
@@ -10,15 +10,15 @@
         currentIndex++;
 
         if (currentIndex == targetText.length) {
-          targetElement.textContent = targetText; // Display the correct statement
-          clearInterval(revealTimer); // Stop when the last character is reached
+          targetElement.textContent = targetText; 
+          clearInterval(revealTimer); 
         }
       }
     }, revealInterval);
   }
 
   const bannerTextElement = document.getElementById('randomizedText');
-  const targetText = 'Where technology meets people'; // Your desired text
+  const targetText = 'Where technology meets people';
   let currentIndex = 0;
 
   // Reveal the text with randomized characters

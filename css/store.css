@@ -16,7 +16,7 @@
     height: 50px;
 }
 
-/* Updated Hamburger menu styles */
+/* Hamburger menu styles */
 .hamburger-menu {
     cursor: pointer;
     margin-left: 10px;
@@ -75,44 +75,34 @@
 .sidebar.active {
     left: 0;
 }
-
 .sidebar-logo {
     padding: 20px;
 }
-
 .sidebar-logo a {
     text-decoration: none;
     color: #fff;
     font-size: 24px;
     font-weight: bold;
 }
-
 .sidebar-menu {
     list-style: none;
     padding: 0;
 }
-
 .sidebar-menu li {
     padding: 10px 0;
 }
-
 /* Updated Sidebar menu styles */
 .sidebar-menu a {
     text-decoration: none;
     color: #fff;
     padding: 10px 20px;
     display: block;
-    transition: background-color 0.3s ease; /* Added transition property */
+    transition: background-color 0.3s ease;
 }
-
 /* Hover effect */
 .sidebar-menu a:hover {
-    background-color: #565657; /* Change background color on hover */
+    background-color: #565657; 
 }
-
-/* Rest of your styles... */
-
-
 /* Banner styles */
 .banner {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('./css/images/pexels-artem-podrez-7773543.jpg') center/cover no-repeat;
@@ -120,32 +110,28 @@
     text-align: center;
     color: #fff;
 }
-
-
-
 .banner-text {
     position: absolute;
-    top: 75%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 36px;
-    font-family: 'Your Custom Font', sans-serif; /* Add your custom font here */
-    letter-spacing: 4px; /* Adjust the letter spacing */
-    text-transform: uppercase; /* Uppercase text */
+    font-size: 42px;
+    font-family:Arial, Helvetica, sans-serif;
+    letter-spacing: 4px;
+    text-transform: uppercase; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     text-decoration: underline;
     font-weight: bold;
 }
 /* Category Tiles Section */
 .tileHeading {
-    background-color: #333; /* Background color for the section title */
+    background-color: #333; 
     text-align: center;
-    color: #fff; /* Text color for the section title */
-    padding: 10px 0; /* Padding for the section title */
+    color: #fff; 
+    padding: 10px 0; 
     text-decoration: underline;
 }
-
-/* Apply hover effect to the cards */
+/*hover effect to the cards */
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-right: 20px !important;
@@ -153,34 +139,33 @@
 }
 
 .card:hover {
-    transform: scale(1.05); /* Scale up on hover */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
-}
+    transform: scale(1.05); 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); }
 
 /* Adjust card title and button styles */
 .card-title {
     font-size: 1.2rem;
     margin-top: 10px;
-    text-transform: capitalize; /* Capitalize card titles */
+    text-transform: capitalize; 
 }
 
 .card a.btn-primary {
-    background-color: #3e5c76; /* Background color for the "Explore Gear" button */
-    color: #fff; /* Text color for the button */
+    background-color: #3e5c76; 
+    color: #fff; 
     border: none;
 }
 
 .card a.btn-primary:hover {
-    background-color: #748cab; /* Background color on hover */
+    background-color: #748cab; 
 }
 #product-section .card {
+    margin-top: 30px !important;
     display: flex;
     flex-direction: column;
     border: 1px solid #ddd;
-    margin: 10px;
-    width: 18rem; /* Set a fixed width for each card */
-    margin-top: 20px;
+    width: calc(80% - 10px)!important; 
 }
+
 
 #product-section .card .card-body {
     flex: 1;
@@ -226,93 +211,93 @@
 .container {
     text-align: center;
 }
-/* Styling for the main footer container */
+/*main footer container */
 footer {
-    background-color: #333; /* Set the background color */
-    color: #fff; /* Set text color */
-    padding: 30px 0; /* Add padding to the top and bottom */
+    background-color: #333; 
+    color: #fff; 
+    padding: 30px 0; 
 }
 
-/* Styling for the contact information section */
+/*contact information section */
 .footer-contact {
-    margin-bottom: 30px; /* Add spacing below this section */
+    margin-bottom: 30px; 
 }
 
 .footer-contact h4 {
-    font-size: 20px; /* Adjust the title's font size */
-    margin-bottom: 10px; /* Add spacing below the title */
+    font-size: 20px; 
+    margin-bottom: 10px; 
 }
 
 .footer-contact p {
-    margin: 0; /* Remove default margins for paragraphs */
+    margin: 0; 
 }
 
-/* Styling for the social media links section */
+/*social media links section */
 .footer-social {
-    margin-bottom: 30px; /* Add spacing below this section */
+    margin-bottom: 30px; 
 }
 
 .footer-social h4 {
-    font-size: 20px; /* Adjust the title's font size */
-    margin-bottom: 10px; /* Add spacing below the title */
+    font-size: 20px; 
+    margin-bottom: 10px; 
 }
 
 .footer-social ul {
-    list-style: none; /* Remove default list styles */
-    padding: 0; /* Remove default padding for the list */
+    list-style: none;
+    padding: 0; 
 }
 
 .footer-social li {
-    margin-bottom: 10px; /* Add spacing between social media links */
+    margin-bottom: 10px;
 }
 
 .footer-social a {
-    text-decoration: none; /* Remove underlines from links */
-    color: #fff; /* Set link text color */
+    text-decoration: none;
+    color: #fff; 
 }
 
-/* Styling for the quick links section */
+/*quick links section */
 .footer-links {
-    margin-bottom: 30px; /* Add spacing below this section */
+    margin-bottom: 30px; 
 }
 
 .footer-links h4 {
-    font-size: 20px; /* Adjust the title's font size */
-    margin-bottom: 10px; /* Add spacing below the title */
+    font-size: 20px;
+    margin-bottom: 10px; 
 }
 
 .footer-links ul {
-    list-style: none; /* Remove default list styles */
-    padding: 0; /* Remove default padding for the list */
+    list-style: none; 
+    padding: 0; 
 }
 
 .footer-links li {
-    margin-bottom: 10px; /* Add spacing between quick links */
+    margin-bottom: 10px; 
 }
 
 .footer-links a {
-    text-decoration: none; /* Remove underlines from links */
-    color: #fff; /* Set link text color */
+    text-decoration: none; 
+    color: #fff; 
 }
 
 /* Styling for the footer bottom section */
 .footer-bottom {
-    background-color: #222; /* Set background color for the bottom section */
-    padding: 10px 0; /* Add padding to the top and bottom */
-    text-align: center; /* Center-align the content */
+    background-color: #222; 
+    padding: 10px 0; 
+    text-align: center; 
 }
 
 .footer-bottom p {
-    margin: 0; /* Remove default margins for paragraphs */
-    color: #fff; /* Set text color for the copyright statement */
+    margin: 0; 
+    color: #fff; 
 }
 
 .footer-bottom a {
-    color: #fff; /* Set link text color for Privacy Policy and Terms of Service links */
+    color: #fff; 
 }
 
 .footer-bottom a:hover {
-    text-decoration: underline; /* Underline the links on hover */
+    text-decoration: underline; 
 }
 #myBtn {
     position: fixed;
@@ -413,9 +398,12 @@ table tbody tr:hover {
     margin-bottom: 10px;
 }
 
+.section-heading{
+    text-decoration: underline;
+    margin-bottom: 15px;
+}
 
-
-/* Example for the PayPal button */
+/*PayPal button */
 #paypal-button-container {
     text-align: center;
 }
@@ -423,7 +411,7 @@ table tbody tr:hover {
 .text-center{
     text-decoration: underline;
 }
-/* Add this to your CSS file */
+
 .jumbotron {
     display: flex;
     justify-content: space-between;
@@ -436,6 +424,9 @@ table tbody tr:hover {
     flex-basis: 23%;
     text-align: center;
     margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .circle {
@@ -444,26 +435,28 @@ table tbody tr:hover {
     justify-content: center;
     width: 80px;
     height: 80px;
-    background-color: #007bff;
+    background-color: #333;
     border-radius: 50%;
     color: #fff;
     font-size: 24px;
     margin: 0 auto 20px;
+    align-self: baseline; 
 }
 
 .circle i {
-    position: relative; /* Ensure icon is positioned correctly */
-    z-index: 1; /* Ensure the icon appears above the circle */
+    position: relative; 
+    z-index: 1; 
 }
 
 h2 {
     font-size: 20px;
     color: #343a40;
+    text-decoration: underline;
 }
 
 p.lead {
     font-size: 16px;
-    color: #555;
+    color: #333;
 }
 
 /* Media queries for responsive design */
@@ -481,7 +474,3 @@ p.lead {
         font-size: 14px;
     }
 }
-
-
-
-

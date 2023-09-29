@@ -74,9 +74,10 @@ if ($paymentSuccessful) {
         <script src="https://www.paypal.com/sdk/js?client-id=Ac4BivSthi2Ef4zH2li-a6Gqs3fh6ix5rmHyQl28-g23BRjKWqbSFPfd6tiOBaVKORFQhtzhsvze-Gnc&currency=USD"></script>
         <div id="paypal-button-container"></div>
     </div>
-    <div class="container category-buttons">
-        <!-- Category Buttons Section -->
-        <h4 class="productButtonHeading">Continue Shopping ?</h4>
+<!-- Category Buttons Section -->
+<section>
+    <h4 class="productButtonHeading">Feel free to browse our collection</h4>
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-3 mb-4">
                 <a href="products.php?id=1" class="btn btn-primary btn-block">Mice</a>
@@ -90,8 +91,15 @@ if ($paymentSuccessful) {
             <div class="col-md-3 mb-4">
                 <a href="products.php?id=4" class="btn btn-primary btn-block">Laptops</a>
             </div>
+            <div class="col-md-3 mb-4">
+                <a href="products.php?id=5" class="btn btn-primary btn-block">Headsets</a>
+            </div>
+            <div class="col-md-3 mb-4">
+                <a href="products.php?id=6" class="btn btn-primary btn-block">Gaming Chairs</a>
+            </div>
         </div>
     </div>
+</section>
     <?php
     include_once '../include/footer.php';
     ?>
